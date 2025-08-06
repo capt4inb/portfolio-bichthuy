@@ -49,7 +49,7 @@ export default function CompanyLogosSection() {
     },
     { 
       name: "ARENA MULTIMEDIA", 
-      role: "Lectures"
+      role: "Lecturer"
     },
     { 
       name: "BRAIN-LIFE JSC", 
