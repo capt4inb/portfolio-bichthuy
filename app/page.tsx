@@ -5,7 +5,7 @@ import type React from "react"
 import { useEffect, useState } from "react"
 import { motion, useScroll, useSpring } from "framer-motion"
 import { Instagram, Facebook, Phone, Mail, Linkedin, ChevronDown, ArrowRight } from "lucide-react"
-import { Drawer, DrawerTrigger, DrawerContent } from "@/components/ui/drawer"
+import { Drawer, DrawerTrigger, DrawerContent, DrawerClose } from "@/components/ui/drawer"
 import { Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
@@ -257,22 +257,20 @@ export default function Portfolio() {
                 <Menu className="w-6 h-6" />
               </Button>
             </DrawerTrigger>
-            <DrawerContent tabIndex={0} className="w-full max-w-full rounded-none p-0 pt-12 bg-white/95 backdrop-blur-md border-b border-white/30 focus:outline-none" onClick={e => e.stopPropagation()}>
+            <DrawerContent tabIndex={0} className="w-full max-w-full rounded-none p-0 pt-12 bg-white/95 backdrop-blur-md border-b border-white/30 focus:outline-none">
               <div className="flex flex-col space-y-4 px-6 pb-8">
                 {[{ id: "hero", label: "Home" }, { id: "about", label: "About" }, { id: "resume", label: "Resume" }, { id: "projects", label: "Projects" }, { id: "contact", label: "Contact" }].map((item) => (
-                  <Button
-                    key={item.id}
-                    variant={activeSection === item.id ? "default" : "ghost"}
-                    className="w-full justify-start text-lg"
-                    onClick={() => {
-                      scrollToSection(item.id);
-                      if (document.activeElement instanceof HTMLElement) {
-                        document.activeElement.blur();
-                      }
-                    }}
-                  >
-                    {item.label}
-                  </Button>
+                  <DrawerClose asChild key={item.id}>
+                    <Button
+                      variant={activeSection === item.id ? "default" : "ghost"}
+                      className="w-full justify-start text-lg touch-manipulation"
+                      onClick={() => {
+                        scrollToSection(item.id);
+                      }}
+                    >
+                      {item.label}
+                    </Button>
+                  </DrawerClose>
                 ))}
               </div>
             </DrawerContent>
