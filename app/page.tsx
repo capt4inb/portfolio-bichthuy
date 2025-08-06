@@ -370,7 +370,7 @@ export default function Portfolio() {
       {/* Enhanced About Section */}
       <section ref={aboutRef} className="py-20 px-4 relative z-10">
         <div className="absolute inset-0 bg-gradient-to-br from-white/80 to-slate-50/80 backdrop-blur-sm"></div>
-        <div className="max-w-4xl mx-auto relative z-10">
+        <div className="max-w-6xl mx-auto relative z-10">
           <motion.div
             initial="initial"
             whileInView="animate"
@@ -391,79 +391,151 @@ export default function Portfolio() {
             </motion.div>
 
             <motion.div variants={fadeInUp} className="space-y-8">
-              {/* Merged Education and Achievements */}
-              <div className="bg-gradient-to-br from-indigo-50/80 to-purple-50/80 backdrop-blur-sm rounded-2xl p-8 border border-white/20 shadow-lg">
-                <h3 className="text-2xl font-bold text-slate-800 mb-8 flex items-center">
-                  <span className="text-3xl mr-3">🎓</span>
-                  Education & Achievements
-                </h3>
+              {/* Two-column layout for About content */}
+              <div className="grid lg:grid-cols-2 gap-8">
+                {/* Left Column - Education & Achievements */}
+                <div className="space-y-8">
+                  <h3 className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-8">
+                    Education & Achievements
+                  </h3>
 
-                <div className="relative">
-                  <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-indigo-500 to-purple-500"></div>
+                  <div className="relative">
+                    <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-indigo-500 to-purple-500"></div>
 
-                  <div className="space-y-8">
-                    {/* Education Timeline */}
-                    <div className="relative flex items-start">
-                      <div className="absolute left-2.5 w-3 h-3 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full border-2 border-white"></div>
-                      <div className="ml-10">
-                        <div className="flex items-center mb-2">
-                          <span className="text-sm font-bold bg-gradient-to-r from-indigo-500 to-purple-500 text-white px-3 py-1 rounded-full mr-3">
-                            2024
-                          </span>
-                          <h4 className="text-xl font-semibold text-slate-800">Master of Software Engineering</h4>
+                    <div className="space-y-8">
+                      {/* Education Timeline */}
+                      <div className="relative flex items-start">
+                        <div className="absolute left-2.5 w-3 h-3 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full border-2 border-white"></div>
+                        <div className="ml-10">
+                          <div className="flex items-center mb-2">
+                            <span className="text-sm font-bold bg-gradient-to-r from-indigo-500 to-purple-500 text-white px-3 py-1 rounded-full mr-3">
+                              2024
+                            </span>
+                            <h4 className="text-xl font-semibold text-slate-800">Master of Software Engineering</h4>
+                          </div>
+                          <p className="text-indigo-600 font-medium">FPT University</p>
+                          <p className="text-slate-600 text-sm">April 2022 - October 2024</p>
                         </div>
-                        <p className="text-indigo-600 font-medium">FPT University</p>
-                        <p className="text-slate-600 text-sm">April 2022 - October 2024</p>
                       </div>
-                    </div>
 
-                    <div className="relative flex items-start">
-                      <div className="absolute left-2.5 w-3 h-3 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full border-2 border-white"></div>
-                      <div className="ml-10">
-                        <div className="flex items-center mb-2">
-                          <span className="text-sm font-bold bg-gradient-to-r from-purple-500 to-indigo-500 text-white px-3 py-1 rounded-full mr-3">
-                            2021
-                          </span>
-                          <h4 className="text-xl font-semibold text-slate-800">Bachelor of Computer Science</h4>
+                      <div className="relative flex items-start">
+                        <div className="absolute left-2.5 w-3 h-3 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full border-2 border-white"></div>
+                        <div className="ml-10">
+                          <div className="flex items-center mb-2">
+                            <span className="text-sm font-bold bg-gradient-to-r from-purple-500 to-indigo-500 text-white px-3 py-1 rounded-full mr-3">
+                              2021
+                            </span>
+                            <h4 className="text-xl font-semibold text-slate-800">Bachelor of Computer Science</h4>
+                          </div>
+                          <p className="text-indigo-600 font-medium">Greenwich Vietnam University</p>
+                          <p className="text-slate-600 text-sm">July 2018 - December 2021</p>
                         </div>
-                        <p className="text-indigo-600 font-medium">Greenwich Vietnam University</p>
-                        <p className="text-slate-600 text-sm">July 2018 - December 2021</p>
                       </div>
-                    </div>
 
-                    {/* Achievements Section */}
-                    <div className="relative flex items-start">
-                      <div className="absolute left-2.5 w-3 h-3 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full border-2 border-white"></div>
-                      <div className="ml-10">
-                        <div className="flex items-center mb-4">
-                          <span className="text-sm font-bold bg-gradient-to-r from-pink-500 to-purple-500 text-white px-3 py-1 rounded-full mr-3">
-                            Achievements
-                          </span>
-                          <h4 className="text-xl font-semibold text-slate-800">Key Milestones</h4>
-                        </div>
-                        <div className="grid md:grid-cols-2 gap-4">
-                          <div className="space-y-3">
-                            <div className="flex items-center space-x-3">
-                              <div className="w-2 h-2 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full"></div>
-                              <span className="text-slate-700 text-sm">IELTS 7.5 - Advanced English Proficiency</span>
+                      {/* Achievements Section */}
+                      <div className="relative flex items-start">
+                        <div className="absolute left-2.5 w-3 h-3 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full border-2 border-white"></div>
+                        <div className="ml-10">
+                          <div className="flex items-center mb-4">
+                            <span className="text-sm font-bold bg-gradient-to-r from-pink-500 to-purple-500 text-white px-3 py-1 rounded-full mr-3">
+                              Achievements
+                            </span>
+                            <h4 className="text-xl font-semibold text-slate-800">Key Milestones</h4>
+                          </div>
+                          <div className="grid md:grid-cols-2 gap-4">
+                            <div className="space-y-3">
+                              <div className="flex items-center space-x-3">
+                                <div className="w-2 h-2 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full"></div>
+                                <span className="text-slate-700 text-sm">IELTS 7.5 - Advanced English Proficiency</span>
+                              </div>
+                              <div className="flex items-center space-x-3">
+                                <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
+                                <span className="text-slate-700 text-sm">7+ Years in Product Design</span>
+                              </div>
                             </div>
-                            <div className="flex items-center space-x-3">
-                              <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
-                              <span className="text-slate-700 text-sm">7+ Years in Product Design</span>
+                            <div className="space-y-3">
+                              <div className="flex items-center space-x-3">
+                                <div className="w-2 h-2 bg-gradient-to-r from-pink-500 to-indigo-500 rounded-full"></div>
+                                <span className="text-slate-700 text-sm">Led 20+ Successful Projects</span>
+                              </div>
+                              <div className="flex items-center space-x-3">
+                                <div className="w-2 h-2 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-full"></div>
+                                <span className="text-slate-700 text-sm">Neurotechnology UX Specialist</span>
+                              </div>
                             </div>
                           </div>
-                          <div className="space-y-3">
-                            <div className="flex items-center space-x-3">
-                              <div className="w-2 h-2 bg-gradient-to-r from-pink-500 to-indigo-500 rounded-full"></div>
-                              <span className="text-slate-700 text-sm">Led 20+ Successful Projects</span>
-                            </div>
-                            <div className="flex items-center space-x-3">
-                              <div className="w-2 h-2 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-full"></div>
-                              <span className="text-slate-700 text-sm">Neurotechnology UX Specialist</span>
-                            </div>
-                          </div>
                         </div>
                       </div>
+                    </div>
+                  </div>
+
+                  {/* Design Tools Section */}
+                  <div className="mt-6">
+                    <h4 className="text-lg font-semibold text-slate-800 mb-4">Design Tools</h4>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-1">
+                      {/* Photoshop */}
+                      <div className="flex flex-col items-center space-y-1">
+                        <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-sm border border-gray-100">
+                          {/* Photoshop SVG */}
+                          <svg className="w-8 h-8" viewBox="0 0 32 32" fill="none">
+                            <rect width="32" height="32" rx="4" fill="#001E36"/>
+                            <text x="16" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#31A8FF">Ps</text>
+                          </svg>
+                        </div>
+                        <span className="text-xs text-slate-600 font-medium">Photoshop</span>
+                      </div>
+
+                      {/* Figma */}
+                      <div className="flex flex-col items-center space-y-1">
+                        <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-sm border border-gray-100">
+                          {/* Figma SVG */}
+                          <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#fff"/><path d="M12 12a3 3 0 1 0 0-6h-3v6h3z" fill="#F24E1E"/><path d="M9 15a3 3 0 1 0 0-6v6z" fill="#A259FF"/><path d="M12 21a3 3 0 0 0 3-3 3 3 0 0 0-3-3h-3v3a3 3 0 0 0 3 3z" fill="#0ACF83"/><path d="M6 6a3 3 0 0 1 3-3h3a3 3 0 1 1 0 6H9a3 3 0 0 1-3-3z" fill="#FF7262"/><path d="M6 12a3 3 0 0 1 3-3h3a3 3 0 1 1 0 6H9a3 3 0 0 1-3-3z" fill="#1ABCFE"/></svg>
+                        </div>
+                        <span className="text-xs text-slate-600 font-medium">Figma</span>
+                      </div>
+
+                      {/* Framer */}
+                      <div className="flex flex-col items-center space-y-1">
+                        <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-sm border border-gray-100">
+                          {/* Framer SVG */}
+                          <svg className="w-8 h-8" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#fff"/><path d="M8 8h16v8H16l8 8H8v-8h8l-8-8z" fill="#0055FF"/></svg>
+                        </div>
+                        <span className="text-xs text-slate-600 font-medium">Framer</span>
+                      </div>
+
+                      {/* Balsamiq Mockups */}
+                      <div className="flex flex-col items-center space-y-1">
+                        <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-sm border border-gray-100">
+                          {/* Balsamiq SVG zigzag */}
+                          <svg className="w-8 h-8" viewBox="0 0 32 32" fill="none"><path d="M4 20c2-2 6-6 10-6s8 6 12 6 2-6-2-6-8 6-12 6-6-6-2-6 8 6 12 6 6-6 2-6-8 6-12 6-6-6-2-6 8 6 12 6" stroke="#A7344A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <span className="text-xs text-slate-600 font-medium">Balsamiq</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right Column - About Me Goals */}
+                <div className="space-y-10">
+                  <div className="space-y-6">
+                    <div className="space-y-5">
+                      <h4 className="text-2xl font-bold bg-gradient-to-r from-red-600 via-orange-500 to-red-600 bg-clip-text text-transparent">
+                        Short-term:
+                      </h4>
+                      <p className="text-gray-800 leading-relaxed text-lg font-medium">
+                        To continue growing as a <span className="bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent font-semibold">Product Designer</span> by contributing to impactful UX/UI projects that prioritize <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent font-semibold">user-centered design</span> and seamless digital experiences. I aim to apply my technical background, creative problem-solving skills, and design expertise to craft intuitive interfaces that bridge the gap between users and technology. In the near term, I seek opportunities to collaborate with cross-functional teams, deepen my knowledge of design systems, and stay current with emerging tools and trends in the UX/UI field.
+                      </p>
+                    </div>
+
+                    <div className="w-32 h-1 bg-gradient-to-r from-red-500 via-orange-500 to-red-500 rounded-full shadow-lg"></div>
+
+                    <div className="space-y-5">
+                      <h4 className="text-2xl font-bold bg-gradient-to-r from-red-600 via-orange-500 to-red-600 bg-clip-text text-transparent">
+                        Long-term:
+                      </h4>
+                      <p className="text-gray-800 leading-relaxed text-lg font-medium">
+                        To become a leading <span className="bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent font-semibold">UX/UI expert</span> with the ability to drive product vision, mentor junior designers, and influence design strategy at a broader organizational level. I aspire to build and lead high-performing design teams, contribute to the evolution of design best practices, and create products that not only meet business goals but also deliver <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent font-semibold">meaningful value to users</span>. Ultimately, I want to leave a lasting impact on the digital landscape through thoughtful, human-centered design.
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -503,53 +575,48 @@ export default function Portfolio() {
               <div className="space-y-12">
                 {[
                   {
-                    year: "2023",
+                    year: "Jan 2023 - Now",
                     title: "UX & Research Lead",
-                    company: "Brain-Life JSC",
-                    period: "Jan 2023 - Present",
+                    company: "BRAIN-LIFE JSC",
                     description:
-                      "Leading end-to-end UX strategy for neurotechnology products, including EEG headbands and BCI/HCI-based platforms.",
-                    tools: ["Figma", "MATLAB", "Notion", "Jira"],
+                      `- Lead end-to-end UX strategy for neurotechnology products, including EEG headbands and BCI/HCI-based platforms.\n- Translate complex neuroscientific data into intuitive, user-centered interface designs.\n- Collaborate closely with cross-functional teams (engineering, product, neuroscience) to align design with real-time brain data insights.\n- Conduct and oversee usability testing, A/B testing, and heuristic evaluations to refine product experience.\n- Build and maintain scalable design systems that meet both clinical and user experience standards.\n- Mentor designers and promote UX best practices across teams to ensure cohesive design execution.\n- Advocate for accessible, empathetic design grounded in cognitive science and user behavior.`,
+                    tools: ["Figma", "FigJam", "Notion", "Jira", "Trello", "MATLAB"],
                     highlight: true,
                   },
                   {
-                    year: "2023",
+                    year: "Jan 2023 - Now",
                     title: "Lecturer",
-                    company: "Arena Multimedia",
-                    period: "Jan 2023 - Present",
+                    company: "ARENA MULTIMEDIA",
                     description:
-                      "Teaching next-generation web design, UX/UI concepts, and digital prototyping to aspiring designers.",
-                    tools: ["Figma", "Framer"],
+                      `- Planning teaching, including lectures, seminars/tutorials and learning materials\n- Meeting students individually to discuss progress\n- Checking and assessing students' work\n- Pursuing research\n- Interviewing potential students\n- Carrying out administration, such as attending faculty meetings and writing reports\nSubjects taught:\n- Building Next Generation Website\n- Responsive Design\n- Web / App Designing Concepts\n- User & Product Research\n- UX Design\n- Digital Wireframe\n- UI Design\n- Prototyping`,
+                    tools: ["Figma"],
                     highlight: false,
                   },
                   {
-                    year: "2022",
+                    year: "Apr 2022 - Jan 2025",
                     title: "Product Designer / Product Owner",
-                    company: "VNG Corporation",
-                    period: "Apr 2022 - Jan 2025",
+                    company: "VNG CORPORATION",
                     description:
-                      "Led PRISM platform and VCloudCam AI projects, managing product lifecycle from concept to launch.",
+                      `- Identify opportunities for new products\n- Analyze how a new product ties in with market needs and consumer preferences\n- Set design requirements based on briefs from internal teams and external partners\n- Research materials and techniques, sketch drafts on paper or digitally\n- Use 3D modeling software to design products and components\n- Produce prototypes and test functionality, improve the design of existing products\n- Gather feedback from product users\n- Take care of the health and spirit of team members\n- Be Scrum Master if necessary`,
                     tools: ["Figma"],
                     highlight: true,
                   },
                   {
-                    year: "2020",
+                    year: "July 2020 - Mar 2022",
                     title: "UX/UI Designer & Developer",
-                    company: "FPT Information System",
-                    period: "July 2020 - Mar 2022",
+                    company: "FPT INFORMATION SYSTEM",
                     description:
-                      "Delivered superior product design for Web Apps and Mobile Apps including FIS Insight and Hanwha Life projects.",
-                    tools: ["Figma", "Photoshop", "Balsamiq"],
+                      `- Work closely with product and BA teams to gather requirements to innovate and deliver superior product design.\n- Create concept visual solution or framework and pitch to product and tech team from historical, design, business and competitive standpoint.\n- Follow DEV sprint framework to deliver on time for developers to start on implementation.\n- Design UI & UX for Web App, Mobile Apps and for internal products.\n- Collaborate with front-end developers to create professional and UX-optimized products.\n- Production of custom UI assets as required by the development team.\n- Maintain company products style guide.`,
+                    tools: ["Figma", "Balsamiq Mockups", "Photoshop", "Ai"],
                     highlight: false,
                   },
                   {
-                    year: "2018",
+                    year: "June 2018 - Feb 2020",
                     title: "UX Designer & Data Entry",
                     company: "TÔT.",
-                    period: "June 2018 - Feb 2020",
                     description:
-                      "Started my journey in UX design, creating personas through user research and solving creative UX problems.",
-                    tools: ["Sketch", "InVision", "Zeplin"],
+                      `- Create personas through user research and data\n- Find creative ways to solve UX problems\n- Communicate design ideas and prototypes to developers\n- Entering data into database software and checking to ensure the accuracy of the data that has been inputted\n- Testing new database systems and software updates`,
+                    tools: ["Sketch", "InVision", "Zeplin", "Survey Monkey", "Qualtrics", "User Testing"],
                     highlight: false,
                   },
                 ].map((job, index) => (
@@ -576,7 +643,6 @@ export default function Portfolio() {
                       <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-lg">
                         <h3 className="text-2xl font-bold text-slate-800 mb-2">{job.title}</h3>
                         <p className="text-lg font-semibold text-indigo-600 mb-2">{job.company}</p>
-                        <p className="text-sm text-slate-500 mb-4">{job.period}</p>
                         <p className="text-slate-700 mb-4">{job.description}</p>
 
                         <div className="flex flex-wrap gap-2">
