@@ -230,7 +230,7 @@ export default function Portfolio() {
                       filter: "drop-shadow(0 0 8px rgba(99, 102, 241, 0.2))"
                     }}
                   >
-                    Product Designer & Product Owner
+                    Product Designer & Product Design
                   </motion.span>{" "}
                   with 7 years of experience in the tech industry. With a background in IT and a Master's in Software Engineering in progress, I focus on{" "}
                   <motion.span 
@@ -312,7 +312,7 @@ export default function Portfolio() {
                   <div className="text-center mb-6">
                     <h2 className="text-xl lg:text-2xl font-light text-white mb-3 tracking-wide">HO BICH THUY</h2>
                     <div className="w-12 h-0.5 bg-gradient-to-r from-white/60 to-white/40 mx-auto mb-3 rounded-full"></div>
-                    <p className="text-lg lg:text-xl font-medium text-white/95">PRODUCT OWNER</p>
+                    <p className="text-lg lg:text-xl font-medium text-white/95">PRODUCT DESIGN</p>
                     <p className="text-xs text-white/80 mt-2 font-light">UX/UI Designer & Research Lead</p>
                   </div>
 
