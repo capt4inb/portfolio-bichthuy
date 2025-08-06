@@ -230,7 +230,7 @@ export default function Portfolio() {
                       filter: "drop-shadow(0 0 8px rgba(99, 102, 241, 0.2))"
                     }}
                   >
-                    Product Designer & Product Design
+                    Product Design
                   </motion.span>{" "}
                   with 7 years of experience in the tech industry. With a background in IT and a Master's in Software Engineering in progress, I focus on{" "}
                   <motion.span 
