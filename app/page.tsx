@@ -1068,13 +1068,17 @@ export default function Portfolio() {
 }
 
 function ExperienceTimelineSlider({ jobs }: { jobs: any[] }) {
-  const [sliderRef] = useKeenSlider<HTMLDivElement>({
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     slides: { perView: 1, spacing: 16 },
     mode: "snap",
+    slideChanged(slider) {
+      setCurrentSlide(slider.track.details.rel);
+    },
   })
   const showIndicator = jobs.length > 1;
   return (
-    <div className="relative">
+    <div className="relative pb-8">
       <div ref={sliderRef} className="keen-slider">
         {jobs.map((job, index) => (
           <div className="keen-slider__slide p-1" key={index}>
@@ -1100,10 +1104,23 @@ function ExperienceTimelineSlider({ jobs }: { jobs: any[] }) {
         ))}
       </div>
       {showIndicator && (
-        <div className="absolute top-1/2 right-2 -translate-y-1/2 flex items-center z-20">
-          <span className="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-br from-indigo-200 to-purple-200 shadow-lg animate-pulse-slow">
-            <ArrowRight className="w-7 h-7 text-indigo-600" />
-          </span>
+        <div className="flex justify-center mt-4 gap-4">
+          <button
+            className="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-br from-indigo-100 to-purple-100 shadow-lg hover:scale-110 transition-all disabled:opacity-40"
+            onClick={() => instanceRef.current?.prev()}
+            disabled={currentSlide === 0}
+            aria-label="Previous slide"
+          >
+            <ArrowRight className="w-6 h-6 text-indigo-600 rotate-180" />
+          </button>
+          <button
+            className="w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-br from-indigo-200 to-purple-200 shadow-lg hover:scale-110 transition-all disabled:opacity-40"
+            onClick={() => instanceRef.current?.next()}
+            disabled={currentSlide === jobs.length - 1}
+            aria-label="Next slide"
+          >
+            <ArrowRight className="w-6 h-6 text-indigo-600" />
+          </button>
         </div>
       )}
     </div>
@@ -1125,7 +1142,7 @@ function ProjectsSlider({ projects }: { projects: any[] }) {
       <div ref={sliderRef} className="keen-slider">
         {projects.map((project, index) => (
           <div className="keen-slider__slide p-1" key={index}>
-            <div className="bg-white/60 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg border border-white/20 transition-all duration-500 flex flex-col h-full min-h-[480px] justify-between">
+            <div className="bg-white/60 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg border border-white/20 transition-all duration-500 h-[480px] flex flex-col">
               <div className={`w-full h-48 bg-gradient-to-br ${project.gradient} flex items-center justify-center relative overflow-hidden`}>
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-black/5 transition-all duration-300"></div>
                 <span className="text-white font-bold text-lg z-10">{project.category}</span>
